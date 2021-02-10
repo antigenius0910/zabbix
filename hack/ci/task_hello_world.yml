@@ -4,7 +4,7 @@ image_resource:
   type: docker-image
   source:
     repository: golang
-    tag: 1.14.15-alpine3.13
+    tag: 1.14.15-stretch
 
 run:
   path: /bin/bash
