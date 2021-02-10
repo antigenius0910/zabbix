@@ -1,0 +1,14 @@
+resources:
+  - name: zabbix-resource
+    type: git
+    source:
+      uri: https://github.com/antigenius0910/zabbix.git
+      branch: release/4.0_yen
+
+jobs:
+  - name: zabbix-hello-world
+    public: true
+    plan:
+      - get: zabbix-resource
+      - task: zabbix-hello-world
+        file: zabbix-resource/hack/ci/task_hello_world.yml
