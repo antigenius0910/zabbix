@@ -12,5 +12,4 @@ jobs:
     plan:
       - get: workspace-repo
       - task: zabbix-app-tests
-        file: resource-zabbix/hack/ci/task_run_tests.yml
-
+        file: workspace-repo/hack/ci/task_run_tests.yml
