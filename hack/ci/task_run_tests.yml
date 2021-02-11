@@ -21,3 +21,5 @@ run:
     cd resource-zabbix
     pwd
     ls -al
+    echo $PATH
+    cat ~/.profile    
