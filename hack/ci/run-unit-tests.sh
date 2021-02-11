@@ -1,8 +1,6 @@
 #!/bin/sh
 
-   
-    build_root=$PWD
-    echo "Build Root: ${build_root}"
+    build_root="${PWD}"
 
     cd resource-zabbix
     ls -al
@@ -18,4 +16,4 @@
     ./configure --enable-agent --with-openssl --program-prefix=cld- --program-suffix=-$builddate --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc
 
     make
-    make test COVERAGE_DIR=${build_root}/coverage
+    make install 
