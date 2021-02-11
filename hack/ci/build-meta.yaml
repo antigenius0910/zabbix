@@ -1,0 +1,6 @@
+# Images separated by architecture
+images:
+  # Contains list of images built for all architectures
+  multi_arch: 
+  # Contains list of images built only for the amd64 architecture
+  amd64: genctl/regional-baremetal #genctl/regional-baremetal-admission
