@@ -1,6 +1,6 @@
 ---
 resources:
-  - name: resource-zabbix
+  - name: workspace-repo
     type: git
     source:
       uri: https://github.com/antigenius0910/zabbix.git
@@ -10,7 +10,7 @@ jobs:
   - name: job-test-zabbix
     public: true
     plan:
-      - get: resource-zabbix
+      - get: workspace-repo
       - task: zabbix-app-tests
         file: resource-zabbix/hack/ci/task_run_tests.yml
 
