@@ -1,0 +1,15 @@
+---
+resources:
+  - name: workspace-repo
+    type: git
+    source:
+      uri: https://github.com/antigenius0910/zabbix.git
+      branch: release/4.0_yen
+
+jobs:
+  - name: job-test-zabbix
+    public: true
+    plan:
+      - get: workspace-repo
+      - task: zabbix-app-tests
+        file: workspace-repo/hack/ci/task_run_tests.yml
