@@ -21,3 +21,6 @@ run:
 
     pwd 
     ls -al
+    cd gopath
+    cd gopath/src/github.com/antigenius0910/zabbix/hack/ci
+    ls -al
