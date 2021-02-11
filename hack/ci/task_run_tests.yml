@@ -7,7 +7,7 @@ image_resource:
   source: {repository: golang, tag: 1.14.15-stretch}
 
 inputs:
-  - name: resource-zabbix
+  - name: workspace-repo
 
 run:
-  path: resource-zabbix/hack/ci/build.sh
+  path: workspace-repo/hack/ci/build.sh

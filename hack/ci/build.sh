@@ -4,7 +4,7 @@
     build_root=$PWD
     echo "Build Root: ${build_root}"
 
-    cd resource-zabbix
+    cd workspace-repo
     ls -al
     echo $PATH
 
