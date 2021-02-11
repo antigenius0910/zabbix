@@ -9,7 +9,8 @@ image_resource:
 inputs:
   - name: resource-tutorial
   - name: resource-app
-    path: gopath/src/github.com/cloudfoundry-community/simple-go-web-app
+  - name: resource-zabbix
+    path: gopath/src/github.com/antigenius0910/zabbix/hack/ci
 
 run:
   path: /bin/sh
