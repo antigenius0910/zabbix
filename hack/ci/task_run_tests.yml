@@ -23,6 +23,7 @@ run:
     ls -al
     echo $PATH
 
+    ./bootstrap.sh
     builddate=$(date --utc +%Y-%m-%d)
     ./configure --enable-agent --with-openssl --program-prefix=cld- --program-suffix=-$builddate --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc
 
