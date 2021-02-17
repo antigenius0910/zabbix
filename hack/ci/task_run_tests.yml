@@ -10,4 +10,4 @@ inputs:
   - name: workspace-repo
 
 run:
-  path: workspace-repo/hack/ci/run-unit-tests.sh
+  path: workspace-repo/hack/ci/build.sh

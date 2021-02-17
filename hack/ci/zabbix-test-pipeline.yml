@@ -4,7 +4,7 @@ resources:
     type: git
     source:
       uri: https://github.com/antigenius0910/zabbix.git
-      branch: release/4.0_yen
+      branch: genctl
 
 jobs:
   - name: job-test-zabbix
