@@ -27,4 +27,4 @@
             --enable-agent 
 
     make
-    checkinstall --install=no --fstrans=no --default 
+    checkinstall --install=no --fstrans=no --pkgversion="1.0.0" --default 
