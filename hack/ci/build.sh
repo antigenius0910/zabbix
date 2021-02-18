@@ -27,4 +27,4 @@
             --enable-agent 
 
     make
-    checkinstall --install=no --default 
+    checkinstall --install=no --fstrans=no --default 
