@@ -27,4 +27,4 @@
             --enable-agent 
 
     make
-    sudo checkinstall --install=no --default 
+    checkinstall --install=no --default 
