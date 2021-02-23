@@ -31,8 +31,8 @@ echo $VERSION
 checkinstall \
         --install=no \
         --fstrans=no \
-        --pkgname=zabbix-agent \
+        --pkgname=zabbix-agent_1.0.0 \
         --pkgversion="$VERSION" \
         --default
-cp ./zabbix-agent_$VERSION-1_amd64.deb ../workspace-repo-deb/
+cp ./zabbix-agent_1.0.0_$VERSION-1_amd64.deb ../workspace-repo-deb/
 ls -al ../workspace-repo-deb
