@@ -27,7 +27,7 @@ builddate=$(date --utc +%Y-%m-%d)
 
 make
 VERSION=$(date -u +"%Y%m%dT%H%M%SZ")
-VERSION="1.0.0_${VERSION}"
+VERSION="${VERSION}.1"
 echo $VERSION
 checkinstall \
         --install=no \
