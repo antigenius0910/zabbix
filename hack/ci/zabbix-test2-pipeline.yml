@@ -12,7 +12,7 @@ resources:
   source:
     endpoint: http://192.168.144.6:8081/artifactory
     repository: "/example-repo-local"
-    regex: "workspace_(?<version>.*).deb"
+    regex: "zabbit-agent_(?<version>.*).deb"
     username: yen
     password: SS6:Z3+sWMbr476n
 - name: workspace-repo
@@ -38,65 +38,7 @@ jobs:
           - name: workspace-repo-deb
 
           run:
-            path: sh
-            args:
-            - -exc
-            - |
-              build_root=$PWD
-              echo "Build Root: ${build_root}"
-
-              cd workspace-repo
-
-              apt update
-              apt install -y libssl-dev
-              apt install -y libpcre3-dev
-              apt install -y automake 
-              apt install -y checkinstall
-
-              ./bootstrap.sh
-              builddate=$(date --utc +%Y-%m-%d)
-
-              ./configure \
-                      --bindir=/usr/bin \
-                      --sbindir=/usr/sbin \
-                      --datadir=/usr/lib \
-                      --libdir=/usr/lib/zabbix \
-                      --sysconfdir=/etc/zabbix \
-                      --program-prefix=cld- \
-                      --program-suffix=-$builddate \
-                      --with-openssl \
-                      --enable-agent 
-
-              make
-              checkinstall --install=no --fstrans=no --pkgversion="1.0.0" --default
-              ls -al 
-              pwd
-              cp ./workspace_1.0.0-1_amd64.deb ../workspace-repo-deb/
-              ls -al ../workspace-repo-deb
-
-      - task: upload-to-artifactory
-        config:
-          platform: linux
-          image_resource:
-            type: docker-image
-            source: {repository: golang, tag: 1.14.15-stretch}
-
-          inputs:
-            - name: workspace-repo
-            - name: workspace-repo-deb
-
-          run:
-            path: sh
-            args:
-            - -exc
-            - |
-              ls -al
-              pwd
-              cd workspace-repo
-              ls -al
-              cd ..
-              cd workspace-repo-deb
-              ls -al
+            path: workspace-repo/hack/ci/build.sh
 
       - put: artifactory-repository
-        params: { file: ./workspace-repo-deb/workspace_1.0.0-1_amd64.deb } 
+        params: { file: ./workspace-repo-deb/zabbix-agent_*_amd64.deb } 
