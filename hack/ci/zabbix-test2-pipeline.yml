@@ -12,7 +12,7 @@ resources:
   source:
     endpoint: http://192.168.144.6:8081/artifactory
     repository: "/example-repo-local"
-    regex: "zabbit-agent_(.*).deb"
+    regex: zabbit-agent_(?<version>.*).deb
     username: yen
     password: SS6:Z3+sWMbr476n
 - name: workspace-repo
