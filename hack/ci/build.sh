@@ -26,8 +26,7 @@ builddate=$(date --utc +%Y-%m-%d)
         --enable-agent 
 
 make
-VERSION=$(date -u +"%Y%m%dT%H%M%SZ")
-VERSION="1.0.${VERSION}"
+VERSION=$(date -u +"%Y%m%d%H%S")
 echo $VERSION
 checkinstall \
         --install=no \
